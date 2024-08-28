@@ -6,24 +6,37 @@ const styles = StyleSheet.create({
       alignItems: 'center',
     },
     containerDiario: {
-      backgroundColor: '#000',
+      backgroundColor: 'darkgreen',
       padding: 20, 
-      margin: 60,
+      marginTop: 80,
       borderRadius: 20,
-      width: '80%'
+      width: '80%',
+      height: "20%",
     },
     containerEmocao: {
-      backgroundColor: '#000',
+      backgroundColor: 'darkgreen',
       padding: 20, 
-      width: '80%',
+      marginTop: 35,
       borderRadius: 20,
-      marginBottom: 20,
+      width: '80%',
+      height: '12%',
     },
     containerAtividades: {
-      backgroundColor: '#000',
+      backgroundColor: 'darkgreen',
       padding: 20, 
-      width: '80%',
+      marginTop: 35,
       borderRadius: 20,
+      width: '80%',
+      height: '12%',
+    },
+    containerProxSessao: {
+      backgroundColor: 'darkgreen',
+      padding: 20, 
+      marginTop: 35,
+      borderRadius: 20,
+      width: '80%',
+      height: '12%',
+
     },
     titleDiario: {
       fontSize: 22,
@@ -34,6 +47,10 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
     },
     titleAtividades: {
+      fontSize: 22,
+      fontWeight: 'bold',
+    },
+    titleProxSessao: {
       fontSize: 22,
       fontWeight: 'bold',
     },
