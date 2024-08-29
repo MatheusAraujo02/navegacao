@@ -1,11 +1,19 @@
 import { Text, View } from 'react-native';
 import styles from './home_styles';
 
+import { Feather} from '@expo/vector-icons';
+
+
 export default function Home() {
   return (
     <View style={styles.container}>
-        <View style={styles.containerDiario}>
-          <Text style={styles.titleDiario}>Diario</Text>
+          <View style={styles.containerDiario}>         
+            <Text style={styles.emoteDiario}> <Feather name='home' color={'white'} size={30} /> </Text>
+          <View style={styles.containerDiario2}>  
+            <Text style={styles.titleDiario}> Diario </Text>
+            <Text style={styles.titleDiario2}> Como foi seu dia? </Text>
+          </View>
+          
         </View>
 
         <View style={styles.containerEmocao}>

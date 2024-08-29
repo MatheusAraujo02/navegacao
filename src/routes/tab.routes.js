@@ -21,7 +21,7 @@ export default function TabRoutes() {
             name='Home'
             component={Home}
             options={{
-                tabBarIcon: ({ focused, size}) => <Feather name='home'  color={focused ? 'darkgreen' : 'grey' } size={ size }/>,
+                tabBarIcon: ({ focused, size}) => <Feather name= 'home'  color={focused ? 'darkgreen' : 'grey' } size={ size }/>,
                 tabBarLabel: 'Início',
                
             }}
