@@ -1,17 +1,26 @@
-import { Text, View } from 'react-native';
+import { Text, View, Image } from 'react-native';
 import styles from './home_styles';
 
-import { Feather} from '@expo/vector-icons';
+import { Ionicons} from '@expo/vector-icons';
 
 
 export default function Home() {
   return (
     <View style={styles.container}>
-          <View style={styles.containerDiario}>         
-            <Text style={styles.emoteDiario}> <Feather name='home' color={'white'} size={30} /> </Text>
-          <View style={styles.containerDiario2}>  
+          <View style={styles.containerDiario}> 
+          <Image 
+            source={require('../../../assets/Media.png')}
+            style={{
+              zIndex: 0,
+              height: '90%',
+
+            }}
+            />  
+            <Ionicons name='book' style={styles.emoteDiario}/> 
+          
+          <View>  
             <Text style={styles.titleDiario}> Diario </Text>
-            <Text style={styles.titleDiario2}> Como foi seu dia? </Text>
+            <Text style={[styles.titleDiario, {fontSize: 16}]}> Como foi seu dia? </Text>
           </View>
           
         </View>
