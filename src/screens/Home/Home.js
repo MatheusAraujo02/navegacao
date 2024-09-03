@@ -3,6 +3,10 @@ import styles from './home_styles';
 
 import { Ionicons, Feather} from '@expo/vector-icons';
 
+function Teste(Text){
+    <Text>Hoje é terça</Text>
+
+}
 
 export default function Home() {
   return (
@@ -39,12 +43,14 @@ export default function Home() {
 
         <View style={styles.containerProxSessao}>
           <Text style={styles.titleProxSessao}>Proxima sessão</Text>
+          <Ionicons name='calendar-outline' style={{ fontSize: 25, color: '#0E920A', position: 'absolute', marginLeft: 20}}/>
+          <Text style={ styles.titleData }> </Text>
         </View>
     </View>
   );
 }
 
-/* o padding do conteiner estava fazendo a imagem nao chegar no final do container principal que é o retangulo verde escuro. 
+/* o padding do container estava fazendo a imagem nao chegar no final do container principal que é o retangulo verde escuro. 
 Tirando ele e mexendo somendo no marginLeft do titulo e do emoticon deu pra fazer ela ficar no lugar certo
 só falta testar em outros dispositivos 
   

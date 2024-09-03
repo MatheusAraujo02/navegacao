@@ -11,7 +11,7 @@ export default function DrawerRoutes() {
         <Drawer.Navigator screenOptions={{
             drawerActiveTintColor: 'darkgreen', 
             drawerInactiveTintColor: 'grey',
-            title: ''
+            title: '',
         }
         }>
             <Drawer.Screen

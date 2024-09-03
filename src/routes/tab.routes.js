@@ -5,6 +5,7 @@ import { Feather, Ionicons} from '@expo/vector-icons';
 import Home from '../screens/Home/Home';
 import Diario from '../screens/Diario/Diario';
 import Emocao from '../screens/Emocao/Emocao';
+import Atividades from '../screens/Atividades/atividades';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,7 +18,7 @@ export default function TabRoutes() {
             tabBarInactiveTintColor: 'grey'
             }}
         >
-            <Tab.Screen
+        <Tab.Screen
             name='Home'
             component={Home}
             options={{
@@ -27,7 +28,7 @@ export default function TabRoutes() {
             }}
         />
 
-         <Tab.Screen
+        <Tab.Screen
             name='Diario'
             component={Diario}
             options={{
@@ -36,12 +37,21 @@ export default function TabRoutes() {
             }}
         />
 
-         <Tab.Screen
+        <Tab.Screen
             name='Emocao'
             component={Emocao}
             options={{
                 tabBarIcon: ({ focused, size}) => <Feather name='smile' color={ focused ? 'darkgreen' : 'grey'  } size={ size }/>,
                 tabBarLabel: 'Emoção'
+            }}
+        />
+
+        <Tab.Screen
+            name='Atividade'
+            component={Atividades}
+            options={{
+                tabBarIcon: ({ focused, size}) => <Ionicons name='book-outline' color={ focused ? 'darkgreen' : 'grey'  } size={ size }/>,
+                tabBarLabel: 'Atividades'
             }}
         />
         </Tab.Navigator>
