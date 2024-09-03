@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
       width: '90%',
       height: '14%',
       shadowColor: '#000',
-      elevation: 2,
+      elevation: 4,
     },
     titleProxSessao: {
       padding: 2,
@@ -75,13 +75,13 @@ const styles = StyleSheet.create({
       fontWeight: 'bold',
       alignSelf: 'flex-start',
       marginTop: -10,
-      elevation: 5,
+      elevation: 3,
       flexWrap: 'wrap',
       height: '10'
     },
     titleData: {
-      
-
+      position: 'absolute',
+      marginLeft: '14%'
     },
   
   });

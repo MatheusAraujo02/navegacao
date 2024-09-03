@@ -3,22 +3,20 @@ import styles from './home_styles';
 
 import { Ionicons, Feather} from '@expo/vector-icons';
 
-function Teste(Text){
-    <Text>Hoje é terça</Text>
-
-}
+const dia = 'terça-fera';
+const hora = '20 e onibus';
 
 export default function Home() {
   return (
     <View style={styles.container}>
         <View style={styles.containerDiario}>           
-          <Ionicons name='pencil' style={{ backgroundColor: 'green', borderRadius: 7, padding: 6, marginLeft: 26, fontSize: 30,}}/> 
+          <Ionicons name='pencil' style={{ backgroundColor: 'green', borderRadius: 7, padding: 6, marginLeft: 26, fontSize: 30}}/> 
           
           <View>  
             <Text style={styles.titleDiario}> Diário </Text>
             <Text style={[styles.titleDiario, {fontSize: 16, marginLeft: 12,}]}> Como foi seu dia? </Text>
           </View>
-            <Image source={require('../../../assets/MetadeCaderno.png')} style={{ justifyContent: 'flex-end', marginLeft: 'auto' }} />  
+            <Image source={require('../../../assets/MetadeCaderno.png')} style={{ justifyContent: 'flex-end', marginLeft: 'auto', height: '100%', borderTopRightRadius: 20, borderBottomRightRadius: 20,  }} />  
         </View>
 
         <View style={styles.containerEmocao}>
@@ -28,7 +26,7 @@ export default function Home() {
             <Text style={styles.titleEmocao}>Emoção</Text>
             <Text style={[styles.titleEmocao, {fontSize: 16, marginLeft: 8}]}> Defina sua emoção agora </Text>          
           </View>
-            <Image source={require('../../../assets/FloresEmocoes.png')} style={{height: 106, justifyContent: 'flex-end', marginLeft: 'auto', borderTopRightRadius: 20, borderBottomRightRadius: 20}} />
+            <Image source={require('../../../assets/FloresEmocoes.png')} style={{ justifyContent: 'flex-end', marginLeft: 'auto', height: '100%',  borderTopRightRadius: 20, borderBottomRightRadius: 20}} />
         </View>
 
         <View style={styles.containerAtividades}>
@@ -38,13 +36,14 @@ export default function Home() {
             <Text style={styles.titleAtividades}>Atividades</Text>
             <Text style={[styles.titleAtividades, {fontSize: 16, marginLeft: 7}]}> Conteúdos adicionais</Text>
           </View>
-          <Image source={require('../../../assets/FloresAtividade.png')} style={{height: 106, justifyContent: 'flex-end', marginLeft: 'auto', borderTopRightRadius: 20, borderBottomRightRadius: 20}} />
+          <Image source={require('../../../assets/FloresAtividade.png')} style={{ justifyContent: 'flex-end', marginLeft: 'auto', height: '100%', borderTopRightRadius: 20, borderBottomRightRadius: 20}} />
         </View>
 
         <View style={styles.containerProxSessao}>
           <Text style={styles.titleProxSessao}>Proxima sessão</Text>
           <Ionicons name='calendar-outline' style={{ fontSize: 25, color: '#0E920A', position: 'absolute', marginLeft: 20}}/>
-          <Text style={ styles.titleData }> </Text>
+          <Text style={ styles.titleData }> {dia} - {hora} </Text>
+          <Text style={ styles.titleData }> {dia} - {hora} </Text>
         </View>
     </View>
   );
