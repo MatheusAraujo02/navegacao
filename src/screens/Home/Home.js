@@ -3,8 +3,9 @@ import styles from './home_styles';
 
 import { Ionicons, Feather} from '@expo/vector-icons';
 
-const dia = 'terça-fera';
-const hora = '20 e onibus';
+const dia = 'Quinta-feira';
+const hora = '19:47';
+const dataNumero=  '03/09/2024';
 
 export default function Home() {
   return (
@@ -41,9 +42,9 @@ export default function Home() {
 
         <View style={styles.containerProxSessao}>
           <Text style={styles.titleProxSessao}>Proxima sessão</Text>
-          <Ionicons name='calendar-outline' style={{ fontSize: 25, color: '#0E920A', position: 'absolute', marginLeft: 20}}/>
+          <Ionicons name='calendar-outline' style={{ fontSize: 35, color: '#0E920A', position: 'absolute', marginLeft: 25}}/>
           <Text style={ styles.titleData }> {dia} - {hora} </Text>
-          <Text style={ styles.titleData }> {dia} - {hora} </Text>
+          <Text style={ [styles.titleData, { marginLeft: '70%'} ] }> {dataNumero} </Text>
         </View>
     </View>
   );

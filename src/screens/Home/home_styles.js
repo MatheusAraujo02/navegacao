@@ -3,9 +3,9 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
       // marginLeft: 40,
-      alignItems: 'center',
       flex: 1,
-      justifyContent: 'space-evenly'
+      alignItems: 'center',
+      justifyContent: 'space-evenly',
     },
     containerDiario: {  
       flexDirection: 'row',
@@ -81,7 +81,8 @@ const styles = StyleSheet.create({
     },
     titleData: {
       position: 'absolute',
-      marginLeft: '14%'
+      marginLeft: '18%',
+      fontWeight: 'bold',
     },
   
   });
