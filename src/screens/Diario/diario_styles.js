@@ -9,7 +9,9 @@ const styles = StyleSheet.create({
     
     },
     calendario: {
-
+        borderWidth: 1,
+        borderColor: 'grey',
+        
     },
     miniDiario: {
         marginTop: 20,
@@ -28,7 +30,26 @@ const styles = StyleSheet.create({
         justifyContent: 'space-around',
         marginTop: 10,
         margin: 10,
-        fontSize: 15
+        marginLeft: 0,
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: 'grey'
+    },
+    caixaInput: {
+        padding: 20,
+        alignSelf: 'center',
+        justifyContent: 'center',
+        width: '100%',
+        height: '25%',
+        backgroundColor: 'grey',
+        borderRadius: 20,
+        marginTop: 20
+
+    },
+    botao: {
+        color: '#fff',
+        fontWeight: 'bold',
+        fontSize: 20
     }
   });
 
