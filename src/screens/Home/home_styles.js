@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
       width: '90%',
       height: '14%',
       shadowColor: '#000',
-      elevation: 4,
+      elevation: 5,
     },
     titleProxSessao: {
       padding: 2,

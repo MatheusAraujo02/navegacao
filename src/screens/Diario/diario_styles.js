@@ -11,7 +11,8 @@ const styles = StyleSheet.create({
     calendario: {
         borderWidth: 1,
         borderColor: 'grey',
-        
+        borderRadius: 15,
+        position: 'relative'
     },
     miniDiario: {
         marginTop: 20,
@@ -19,6 +20,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         height: '50%',
         elevation: 5,
+        borderRadius: 15
 
     },
     textoData: {
