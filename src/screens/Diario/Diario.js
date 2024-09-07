@@ -3,18 +3,18 @@ import { Text, View, Pressable } from 'react-native';
 import {Calendar, LocaleConfig, DateData } from 'react-native-calendars'
 import { DayState } from 'react-native-calendars/src/types';
 
-import { ptBR } from '../../components/localeCalendarConfig';
+// import { ptBR } from '../../components/localeCalendarConfig';
 import styles from './diario_styles';
 
-LocaleConfig.locales['pt-Br'] = ptBR
-LocaleConfig.defaultLocale = 'pt-br'
+// LocaleConfig.locales['pt-Br'] = ptBR
+// LocaleConfig.defaultLocale = 'pt-br'
 
 const Data = "Quinta"
 const Dia = "04"
 const Mes = "Setembro"
 
 export default function Diario() {
-  const [day, setDay] = useState<DateData>() 
+  // const [day, setDay] = useState<DateData>() 
   
   return (
     <View style={styles.container}>
