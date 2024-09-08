@@ -1,6 +1,6 @@
 import { useState} from 'react';
 import { Text, View, Pressable } from 'react-native';
-import {Calendar, DateString} from 'react-native-calendars'
+import {Calendar, } from 'react-native-calendars'
 
 import styles from './diario_styles';
 
@@ -13,22 +13,21 @@ export default function Diario() {
   return (
     <View style={styles.container}>
       <Calendar 
-      style={styles.calendario}
-      theme={{
-        monthTextColor: '#000',
-        todayTextColor: 'darkgreen',
-        selectedDayBackgroundColor :'darkgreen',
-        selectedDayTextColor: '#fff',
-      }}
-      onDayPress={setDay}
-      markedDates={
-        day && {
-          [day.DateString]: {selected: true} 
-      }}
-
-      
-
-      
+        style={styles.calendario}
+        theme={{
+          monthTextColor: '#000',
+          todayTextColor: 'darkgreen',
+          selectedDayBackgroundColor :'darkgreen',
+          selectedDayTextColor: '#fff',
+        }}
+        onDayPress={(day) =>{
+          setDay(day.dateString)
+        }}
+        markedDates={{
+          [day]: {
+            selected: true
+          }
+        }}  
       />
       <View style={styles.miniDiario}>
         <Text style={styles.textoData}>  {day} </Text> 
