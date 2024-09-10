@@ -1,48 +1,38 @@
-import { useState} from 'react';
-import { Text, View, Pressable } from 'react-native';
-import {Calendar, } from 'react-native-calendars'
+import { View, Text, Pressable } from 'react-native'
+import { Ionicons, Feather } from 'react-native-vector-icons'
 
 import styles from './diario_styles';
 
+export default function Diario(){
+    return (
+      <View style={styles.container}>
+        <View style={styles.containerBotao}>
+          <Pressable style={styles.botaoDiario}>
+            <Ionicons name='pencil' style={{ backgroundColor: 'green', borderRadius: 7, padding: 6, fontSize: 30}}/> 
+          </Pressable>
+        </View>
 
-
-export default function Diario() {
-  
-  const [day, setDay] = useState()
-  
-  return (
-    <View style={styles.container}>
-      <Calendar 
-        style={styles.calendario}
-        theme={{
-          monthTextColor: '#000',
-          todayTextColor: 'darkgreen',
-          selectedDayBackgroundColor :'darkgreen',
-          selectedDayTextColor: '#fff',
-        }}
-        onDayPress={(day) =>{
-          setDay(day.dateString)
-        }}
-        markedDates={{
-          [day]: {
-            selected: true
-          }
-        }}  
-      />
-      <View style={styles.miniDiario}>
-        <Text style={styles.textoData}>  {day} </Text> 
-        <Text style={[styles.textoPerguntas, {marginTop: 40}]}> O que te fez bem? </Text> 
-        <Text style={styles.textoPerguntas}> O que te fez mal? </Text> 
-        <Text style={styles.textoPerguntas}> Quais pensamentos? </Text> 
-      <View style={styles.caixaInput}>
-        <Pressable > 
-          <Text style={styles.botao}> Escrever </Text>
-        </Pressable>
-
+        <View style={styles.containerDiario}>                     
+            <Text style={styles.title}>   </Text>         
+        </View>
+        
+        <View style={styles.containerDiario}>                     
+            <Text style={styles.title}>   </Text>         
+        </View>
+       
+        <View style={styles.containerDiario}>                     
+            <Text style={styles.title}>   </Text>         
+        </View>
+        
+        <View style={styles.containerDiario}>                     
+            <Text style={styles.title}>   </Text>         
+        </View>
+       
+        <View style={styles.containerDiario}>                     
+            <Text style={styles.title}>   </Text>         
+        </View>
+   
+      
       </View>
-
-      </View>
-    </View>
-  );
+    )
 }
-

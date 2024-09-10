@@ -3,55 +3,31 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 20,
-        backgroundColor: '#f0f0f0',
-        // justifyContent: 'center'
-        // alignItems: 'center'
-    
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
     },
-    calendario: {   
-        
-    },
-    miniDiario: {
-        // width: '90%',
-        marginTop: 20,
-        padding: 20,
-        backgroundColor: '#fff',
-        height: '50%',
-        elevation: 5,
-        borderRadius: 15
+    botaoDiario: {     
 
     },
-    textoData: {
-        alignSelf: 'center',
-        fontWeight: 'bold',
-        fontSize: 18
-        },
-    textoPerguntas: {
-        justifyContent: 'space-around',
-        marginTop: 10,
-        margin: 10,
-        marginLeft: 0,
-        fontSize: 18,
-        fontWeight: 'bold',
-        color: 'grey'
-    },
-    caixaInput: {
-        padding: 20,
-        alignSelf: 'center',
-        justifyContent: 'center',
-        width: '100%',
-        height: '25%',
-        backgroundColor: 'grey',
+    containerDiario: {
+        flexDirection: 'row',
+        alignItems: 'flex-start',
+        backgroundColor: '#d9d9d9',
         borderRadius: 20,
-        marginTop: 20
+        width: '85%',
+        height: "15%",
+        elevation: 5
+        },
+    title: {
+        top: 10,
+        left: 10,
+        flexWrap: 'wrap'
+    },
+    containerBotao: {
+        alignSelf: 'flex-end',
+        right: 25,
 
     },
-    botao: {
-        color: '#fff',
-        fontWeight: 'bold',
-        fontSize: 20
-    }
   });
 
 export default styles;
