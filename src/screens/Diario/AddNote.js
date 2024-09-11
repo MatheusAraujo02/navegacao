@@ -1,6 +1,6 @@
 import { View, TextInput, Button, StyleSheet } from 'react-native';
 
-const AddNotas = ({ route, navigation }) => {
+const AddNote = ({ route, navigation }) => {
   const { addNote } = route.params;
   const [newNote, setNewNote] = useState('');
 
@@ -41,4 +41,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddNotas;
+export default AddNote;
