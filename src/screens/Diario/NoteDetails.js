@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from 'react-native';
 
-const NoteDatails = ({ route }) => {
+const NoteDetails = ({ route }) => {
   const { note } = route.params;
 
   return (
@@ -26,4 +26,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default NoteDatails;
+export default NoteDetails;

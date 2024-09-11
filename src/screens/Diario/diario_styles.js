@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: '#333',
   },
+  buttonAddNota:{
+    
+  }
 });
 
 export default styles;
