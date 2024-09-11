@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
-import { View, Text, Pressable, FlatList, Button } from 'react-native'
+import { View, Text, Pressable, FlatList } from 'react-native'
 
 import NoteDetails from './NoteDetails';
 import AddNote from './AddNote';
@@ -30,7 +30,7 @@ export default function Diario() {
           renderItem={({ item }) => (
             <Pressable 
               style={styles.noteItem} 
-              onPress={() => navigation.navigate('NoteDetails', { note: item})}
+              onPress={() => navigation.navigate( 'NoteDetails', { note: item})}
             >
               <Text style={styles.noteDate}>{item.date}</Text>
               <Text style={styles.noteText}>{item.text.slice(0, 30)}...</Text>
@@ -39,7 +39,7 @@ export default function Diario() {
         />
         <Pressable
           style={({ pressed}) => [{
-            backgroundColor: pressed ? '#ddd' : '#2196f3',
+            backgroundColor: pressed ? 'grey' : 'darkgreen',
             padding: 10,
             borderRadius: 5,
             alignItems: 'center',
@@ -47,7 +47,9 @@ export default function Diario() {
           ]}
           onPress={() => navigation.navigate( 'AddNote', {addNote})}
         >
-          <Text style={{color: pressed ?'#fff' : '#000', fontSize: 18, }}> Adicionar nota </Text>
+          {({ pressed}) => (
+            <Text style={{color: pressed ? '#000' : '#fff', fontSize: 18, }}> Adicionar nota </Text>
+  )}
         </Pressable>
       </View>
     );
@@ -56,7 +58,7 @@ export default function Diario() {
   return (
     <Stack.Navigator>
       <Stack.Screen name='ListaDeNotas' component={ListaDeNotas} options={{title: 'Minhas notas', headerTitleAlign: 'center'}} />
-      <Stack.Screen name='NoteDatails' component={NoteDetails} options={{title: 'Detalhes da nota'}}/>
+      <Stack.Screen name='NoteDetails' component={NoteDetails} options={{title: 'Detalhes da nota'}}/>
       <Stack.Screen name='AddNote' component={AddNote} options={{ title: 'Adicionar nova nota'}}/>
     </Stack.Navigator>
   )

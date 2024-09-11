@@ -1,7 +1,7 @@
 import { useState} from 'react'
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, StyleSheet, Pressable, Text } from 'react-native';
 
-const AddNote = ({ route, navigation }) => {
+const AddNote = ({ navigation, route }) => {
   const { addNote } = route.params;
   const [newNote, setNewNote] = useState('');
 
@@ -22,7 +22,21 @@ const AddNote = ({ route, navigation }) => {
         value={newNote}
         onChangeText={setNewNote}
       />
-      <Button title="Salvar Nota" onPress={handleSave} />
+      <Pressable 
+        style={({ pressed }) => [{
+          backgroundColor: pressed ? 'grey' : 'darkgreen',
+          padding: 10,
+          borderRadius: 5,
+          alignItems: 'center',
+        }
+        ]}
+        onPress={handleSave}
+      >  
+        {({ pressed}) => (
+          <Text style={{color: pressed ? '#000' : '#fff', fontSize: 18, }}> Salvar nota </Text>
+)}
+
+      </Pressable>
     </View>
   );
 };
