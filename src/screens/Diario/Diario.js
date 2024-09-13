@@ -62,8 +62,8 @@ export default function Diario() {
 
   return (
     <Stack.Navigator>
-      <Stack.Screen name='ListaDeNotas' component={ListaDeNotas} options={{title: 'Minhas notas', headerTitleAlign: 'center'}} />
-      <Stack.Screen name='NoteDetails' component={NoteDetails} options={{title: 'Detalhes da nota'}}/>
+      <Stack.Screen name='ListaDeNotas' component={ListaDeNotas} options={{title: 'Diário Emocional', headerTitleAlign: 'center'}} />
+      <Stack.Screen name='NoteDetails' component={NoteDetails} options={{title: 'Detalhes da Nota'}}/>
       <Stack.Screen name='AddNote' component={AddNote} options={{ title: 'Adicionar nova nota'}}/>
     </Stack.Navigator>
   )

@@ -13,9 +13,9 @@ export default function Home() {
         <View style={styles.containerDiario}>           
           <Ionicons name='pencil' style={{ backgroundColor: 'green', borderRadius: 7, padding: 6, marginLeft: 26, fontSize: 30}}/> 
           
-          <View>  
-            <Text style={styles.titleDiario}> Diário </Text>
-            <Text style={[styles.titleDiario, {fontSize: 16, marginLeft: 12,}]}> Como foi seu dia? </Text>
+          <View style={{marginLeft: 15, }}>  
+            <Text style={styles.titleDiario}>Diário</Text>
+            <Text style={[styles.titleDiario, {fontSize: 15}]}>Como foi seu dia?</Text>
           </View>
             <Image source={require('../../../assets/MetadeCaderno.png')} style={{ justifyContent: 'flex-end', marginLeft: 'auto', height: '100%', borderTopRightRadius: 20, borderBottomRightRadius: 20,  }} />  
         </View>
@@ -23,9 +23,9 @@ export default function Home() {
         <View style={styles.containerEmocao}>
           <Feather name='smile' style={{ backgroundColor: '#0E920A', borderRadius: 7, padding: 6, marginLeft: 26, fontSize: 30,}}/>  
         
-          <View>         
+          <View style={{marginLeft: 15, }}>         
             <Text style={styles.titleEmocao}>Emoção</Text>
-            <Text style={[styles.titleEmocao, {fontSize: 16, marginLeft: 8}]}> Defina sua emoção agora </Text>          
+            <Text style={[styles.titleEmocao, {fontSize: 16}]}>Defina sua emoção</Text>          
           </View>
             <Image source={require('../../../assets/FloresEmocoes.png')} style={{ justifyContent: 'flex-end', marginLeft: 'auto', height: '100%',  borderTopRightRadius: 20, borderBottomRightRadius: 20}} />
         </View>
@@ -33,9 +33,9 @@ export default function Home() {
         <View style={styles.containerAtividades}>
           <Ionicons name='book-outline' style={{ backgroundColor: '#0E920A', borderRadius: 7, padding: 6, marginLeft: 26, fontSize: 30,}}/>  
           
-          <View>
+          <View style={{marginLeft: 15, }}>
             <Text style={styles.titleAtividades}>Atividades</Text>
-            <Text style={[styles.titleAtividades, {fontSize: 16, marginLeft: 7}]}> Conteúdos adicionais</Text>
+            <Text style={[styles.titleAtividades, {fontSize: 16}]}>Conteúdos adicionais</Text>
           </View>
           <Image source={require('../../../assets/FloresAtividade.png')} style={{ justifyContent: 'flex-end', marginLeft: 'auto', height: '100%', borderTopRightRadius: 20, borderBottomRightRadius: 20}} />
         </View>

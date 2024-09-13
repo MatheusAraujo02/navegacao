@@ -19,9 +19,9 @@ const styles = StyleSheet.create({
     },
     titleDiario: { //"Diário"
       color: '#fff',
-      fontSize: 22,
+      fontSize: 25,
       fontWeight: 'bold',
-      marginLeft: 10,
+      // marginLeft: 10,
     },
     containerEmocao: {
       flexDirection: 'row',
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
       color: '#fff',
       fontSize: 22,
       fontWeight: 'bold',
-      marginLeft: 10,
+      // marginLeft: 10,
     },
     containerAtividades: {
       flexDirection: 'row',
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
       color: '#fff',
       fontSize: 22,
       fontWeight: 'bold',
-      marginLeft: 10,
+      // marginLeft: 10,
     },
     containerProxSessao: {
       flexDirection: 'row',
