@@ -51,7 +51,13 @@ export default function TabRoutes() {
             component={Atividades}
             options={{
                 tabBarIcon: ({ focused, size}) => <Ionicons name='book-outline' color={ focused ? 'darkgreen' : 'grey'  } size={ size }/>,
-                tabBarLabel: 'Atividades'
+                tabBarLabel: 'Atividades',
+                tabBarBadge: 1,
+                tabBarBadgeStyle: {
+                    backgroundColor: 'darkgreen', // Cor de fundo da bolinha
+                    color: 'white', // Cor do texto dentro da bolinha
+                },
+
             }}
         />
         </Tab.Navigator>
