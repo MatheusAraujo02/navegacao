@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { View, Text, StyleSheet, Pressable} from 'react-native';
 
-export default function Detalhes({ route, navigation }) {
+export default function Detalhes({ route }) {
     const { atividade } = route.params;
     const [lida, setLida] = useState(false);
 

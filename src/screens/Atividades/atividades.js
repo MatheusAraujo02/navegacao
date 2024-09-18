@@ -1,12 +1,23 @@
 import { useState, useEffect} from 'react';
 import { View, Text, FlatList, Pressable } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+// import { useNavigation } from '@react-navigation/native';
+import Detalhes from './detalhesAtv';
+import { createStackNavigator } from '@react-navigation/stack';
 
-
+const Stack = createStackNavigator();
 
 export default function Atividades() {
     const [atividades, setAtividades] = useState([]);
-    const navigation = useNavigation();
+    // const navigation = useNavigation();
+    
+    const atvNavigation = () => {
+        return (
+            <Stack.Navigator>
+                <Stack.Screen name='Atividades' component={Atividades}  />       
+                <Stack.Screen name='Detalhes' component={Detalhes}/>       
+            </Stack.Navigator>
+        )    
+    };
 
     useEffect(() => {
         const atividadeMock = [ 
