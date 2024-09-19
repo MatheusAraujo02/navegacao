@@ -2,14 +2,18 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
+      flex: 1,
+      padding: 20
       },
-      title: {
-        fontSize: 22,
-        fontWeight: 'bold',
+      atvItem: {
+        padding: 15,
+        marginVertical: 8,
+        backgroundColor: '#f9f9f9',
+        borderRadius: 5,
+      },  
+      atvTitle: {
+        fontSize: 16,
+        color: '#333',
       },
     });
 
