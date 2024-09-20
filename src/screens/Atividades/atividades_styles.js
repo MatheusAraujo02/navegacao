@@ -11,9 +11,12 @@ const styles = StyleSheet.create({
         backgroundColor: '#f9f9f9',
         borderRadius: 5,
       },  
-      atvTitle: {
+      ati_data: {
         fontSize: 16,
         color: '#333',
+      },
+      ati_descricao: {
+
       },
     });
 

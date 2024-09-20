@@ -8,18 +8,21 @@ import { View, Text, StyleSheet, Pressable} from 'react-native';
     return (
       <View style={styles.container}>
         {/* <Text style={styles.title}>{atividade.title}</Text> */}
-        <Text style={styles.text}>{atividade.text}</Text>
+        <Text style={styles.text}>{atividade.ati_descricao}</Text>
       
       <Pressable
-      style={styles.pressable}
-        title={lida ? "Marcar como não lida" : "Marcar como lida"}
+        style={[styles.pressable, {backgroundColor: lida ? 'green' : 'red' } ]}
         onPress={() => setLida(!lida)}
-      />
+      >        
+        {/* <Text style={styles.pressableText}> {lida ? "Ja leu otario, ja era" : "Marcar como lida"} </Text> */}
+      </Pressable>
+   
       </View>
-    )
-
+    );
+    console.log(lida);
 
 }
+
 
 const styles = StyleSheet.create({
     container: {
@@ -36,6 +39,12 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: '#555',
       },
+      pressable: {
+        padding: 20,
+        height: '5%',
+        width: '10%',
+        alignSelf: 'flex-end',
+      }
   });
 
 export default Detalhes;
