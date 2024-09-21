@@ -6,17 +6,20 @@ const styles = StyleSheet.create({
       padding: 20
       },
       atvItem: {
-        padding: 15,
+        padding: 10,
         marginVertical: 8,
         backgroundColor: '#f9f9f9',
         borderRadius: 5,
+        
       },  
       ati_data: {
-        fontSize: 16,
-        color: '#333',
+        fontSize: 12,
+        color: '#888',
+        paddingVertical: 2
       },
       ati_descricao: {
-
+        fontSize: 18,
+        color: '#333',
       },
     });
 

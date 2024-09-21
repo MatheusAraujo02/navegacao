@@ -12,7 +12,7 @@ export default function Atividades() {
 
     useEffect(() => {
         const atividadeMock = [
-            {ati_id: 1, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 1',},
+            {ati_id: 1, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 1 ',},
             {ati_id: 2, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 2',},
         ];
         setAtividades(atividadeMock);
@@ -23,14 +23,14 @@ export default function Atividades() {
         <View style={styles.container}>
           <FlatList 
             data={atividades}
-            keyExtractor={item => item.id}
+            keyExtractor={item => item.ati_id}
             renderItem={({ item }) => (
               <Pressable
                 style={styles.atvItem}
                 onPress={() => navigation.navigate( 'Detalhes', {atividade: item})}
               >
                 <Text style={styles.ati_data}>{item.ati_data}</Text>
-                <Text style={styles.ati_descricao}>{item.ati_descricao}</Text>
+                <Text style={styles.ati_descricao}>{item.ati_descricao.slice(0,49)}...</Text>
               </Pressable>
             )}
             />

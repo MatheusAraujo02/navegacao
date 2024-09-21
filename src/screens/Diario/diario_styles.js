@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   noteItem: {
-    padding: 15,
+    padding: 10,
     marginVertical: 8,
     backgroundColor: '#f9f9f9',
     borderRadius: 5,
@@ -14,9 +14,10 @@ const styles = StyleSheet.create({
   noteDate: {
     fontSize: 12,
     color: '#888',
+    paddingVertical: 2
   },
   noteText: {
-    fontSize: 16,
+    fontSize: 18,
     color: '#333',
   },
   buttonAddNota:{

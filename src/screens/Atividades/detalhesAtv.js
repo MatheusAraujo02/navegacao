@@ -19,7 +19,7 @@ import { View, Text, StyleSheet, Pressable} from 'react-native';
    
       </View>
     );
-    console.log(lida);
+
 
 }
 
@@ -36,6 +36,8 @@ const styles = StyleSheet.create({
         marginBottom: 16,
       },
       text: {
+        // width: '80%',
+        height: '90%',
         fontSize: 16,
         color: '#555',
       },
@@ -44,6 +46,7 @@ const styles = StyleSheet.create({
         height: '5%',
         width: '10%',
         alignSelf: 'flex-end',
+
       }
   });
 
