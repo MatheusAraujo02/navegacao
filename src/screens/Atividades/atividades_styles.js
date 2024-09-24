@@ -12,11 +12,12 @@ const styles = StyleSheet.create({
         borderRadius: 5,
       },  
       ati_data: {
-        fontSize: 16,
-        color: '#333',
+        fontSize: 12,
+        color: '#555',
       },
       ati_descricao: {
-
+        fontSize: 16,
+        color: '#333'
       },
     });
 

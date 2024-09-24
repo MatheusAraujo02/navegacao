@@ -2,6 +2,7 @@ import { useState, useEffect} from 'react';
 import { View, Text, FlatList, Pressable } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import { atividades } from '../../components/mocks/dados';
 import styles from './atividades_styles';
 import Detalhes from './detalhesAtv';
 
