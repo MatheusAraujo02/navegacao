@@ -1,9 +1,12 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { View, Text, StyleSheet, Pressable} from 'react-native';
+import { useAtividades } from './atividades_context';
 
  const Detalhes = ({ route }) => {
-    const { atividade } = route.params;
-    const [lida, setLida] = useState(false);
+    const { atividade } = route.params || {};
+    const { atividadeslidas, toggleAtividadeLida} = useAtividades(); //Acessa o estado e a função do contexto
+
+    const lida = atividadeslidas[atividade.id] || false; // Verifica se a atividade está lida
 
     return (
       <View style={styles.container}>
@@ -12,14 +15,13 @@ import { View, Text, StyleSheet, Pressable} from 'react-native';
       
       <Pressable
         style={[styles.pressable, {backgroundColor: lida ? 'green' : 'red' } ]}
-        onPress={() => setLida(!lida)}
+        onPress={() => toggleAtividadeLida(atividade.id)} // Alterna o id
       >        
         {/* <Text style={styles.pressableText}> {lida ? "Ja leu otario, ja era" : "Marcar como lida"} </Text> */}
       </Pressable>
    
       </View>
     );
-    console.log(lida);
 
 }
 
