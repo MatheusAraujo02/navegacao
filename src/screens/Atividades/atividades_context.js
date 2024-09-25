@@ -5,7 +5,16 @@ const AtividadeContext = createContext();
 export const AtividadesProvider = ({ children }) => {
     const [atividadesLidas, setAtividadesLidas] = useState({});
 
+    const inicializarAtividades = ( atividades ) => {
+        const estadoInicial ={};
+        atividades.forEach(atividade => {
+            estadoInicial[atividade.ati_id] = false;
+        });
+        setAtividadesLidas(estadoInicial);            
+    };
+
     const toggleAtividadeLida = (id) => {
+
         setAtividadesLidas((prev) => ({
             ...prev,
             [id]: !prev[id],
@@ -13,7 +22,7 @@ export const AtividadesProvider = ({ children }) => {
     };
 
     return(
-        <AtividadeContext.Provider value ={{ atividadesLidas, toggleAtividadeLida}}> 
+        <AtividadeContext.Provider value ={{ atividadesLidas, toggleAtividadeLida, inicializarAtividades}}> 
             {children}
         </AtividadeContext.Provider>
     );

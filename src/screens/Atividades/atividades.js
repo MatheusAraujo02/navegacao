@@ -1,8 +1,9 @@
 import { useState, useEffect} from 'react';
 import { View, Text, FlatList, Pressable } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { useAtividades } from './atividades_context';
 
-import { atividades } from '../../components/mocks/dados';
+// import { atividades } from '../../components/mocks/dados';
 import styles from './atividades_styles';
 import Detalhes from './detalhesAtv';
 
@@ -10,13 +11,16 @@ const Stack = createStackNavigator();
 
 export default function Atividades() {
     const [atividades, setAtividades] = useState([]);
+    const { inicializarAtividades } = useAtividades();
 
     useEffect(() => {
         const atividadeMock = [
-            {ati_id: 1, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 1',},
-            {ati_id: 2, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 2',},
+            { ati_id: 1, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 1',},
+            { ati_id: 2 , ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 2',},
         ];
+        
         setAtividades(atividadeMock);
+        inicializarAtividades(atividadeMock);
     }, []);
 
     const ListarAtividades =({ navigation }) => {
@@ -24,7 +28,7 @@ export default function Atividades() {
         <View style={styles.container}>
           <FlatList 
             data={atividades}
-            keyExtractor={item => item.id}
+            keyExtractor={item => item.ati_id.toString()}
             renderItem={({ item }) => (
               <Pressable
                 style={styles.atvItem}
