@@ -1,25 +1,26 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { View, Text, StyleSheet, Pressable} from 'react-native';
+import { useAtividades } from './atividades_context';
 
  const Detalhes = ({ route }) => {
-    const { atividade } = route.params;
-    const [lida, setLida] = useState(false);
+    const { atividade } = route.params || {};
+    const { atividadesLidas, toggleAtividadeLida} = useAtividades(); //Acessa o estado e a função do contexto
+
+    const lida = atividadesLidas[atividade.ati_id] || false; // Verifica se a atividade está lida
 
     return (
       <View style={styles.container}>
-        {/* <Text style={styles.title}>{atividade.title}</Text> */}
         <Text style={styles.text}>{atividade.ati_descricao}</Text>
       
       <Pressable
         style={[styles.pressable, {backgroundColor: lida ? 'green' : 'red' } ]}
-        onPress={() => setLida(!lida)}
+        onPress={() => toggleAtividadeLida(atividade.ati_id)} // Alterna o id
       >        
-        {/* <Text style={styles.pressableText}> {lida ? "Ja leu otario, ja era" : "Marcar como lida"} </Text> */}
+  
       </Pressable>
    
       </View>
     );
-
 
 }
 
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
         // width: '80%',
         height: '90%',
         fontSize: 16,
-        color: '#555',
+        color: '#333',
       },
       pressable: {
         padding: 20,

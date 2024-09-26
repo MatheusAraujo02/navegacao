@@ -6,16 +6,21 @@ import Home from '../screens/Home/Home';
 import Diario from '../screens/Diario/Diario';
 import Emocao from '../screens/Emocao/Emocao';
 import Atividades from '../screens/Atividades/atividades';
+import { useAtividades } from '../screens/Atividades/atividades_context';
 
 const Tab = createBottomTabNavigator();
 
 
 export default function TabRoutes() {
+    const { atividadesLidas } = useAtividades();
+
+    const atividadesNaoLidas = Object.values(atividadesLidas || {}).filter((lida) => !lida).length;
+   
     return (
         <Tab.Navigator screenOptions={ {
             headerShown: false,
             tabBarActiveTintColor: 'darkgreen',
-            tabBarInactiveTintColor: 'grey'
+            tabBarInactiveTintColor: 'grey' 
             }}
         >
         <Tab.Screen
@@ -52,7 +57,7 @@ export default function TabRoutes() {
             options={{
                 tabBarIcon: ({ focused, size}) => <Ionicons name='book-outline' color={ focused ? 'darkgreen' : 'grey'  } size={ size }/>,
                 tabBarLabel: 'Atividades',
-                tabBarBadge: 1,
+                tabBarBadge: atividadesNaoLidas > 0 ? atividadesNaoLidas : null, // Mostra o número de atividades não lidas
                 tabBarBadgeStyle: {
                     backgroundColor: 'darkgreen', // Cor de fundo da bolinha
                     color: 'white', // Cor do texto dentro da bolinha

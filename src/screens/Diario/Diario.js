@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { View, Text, Pressable, FlatList } from 'react-native'
-import { LogBox } from 'react-native';
+// import { LogBox } from 'react-native';
 
-LogBox.ignoreLogs([ // Usado para tirar o alerta da tela, depois preciso ver se o alerta é verdadeiro ou não ira afetar em nada
-  'Non-serializable values were found in the navigation state',
-]);
+// LogBox.ignoreLogs([ // Usado para tirar o alerta da tela, depois preciso ver se o alerta é verdadeiro ou não ira afetar em nada
+//   'Non-serializable values were found in the navigation state',
+// ]);
 
 import NoteDetails from './NoteDetails';
 import AddNote from './AddNote';
@@ -18,8 +18,8 @@ const Stack = createStackNavigator();
 
 export default function Diario() {
   const [notes, setNotes] = useState([
-    {id: '1', text: 'Essa é a nota 1, somente para testes', date: new Date().toLocaleString()},
-    {id: '2', text: 'Essa é a nota 2, somente para testes', date: new Date().toLocaleString()},
+    { id: '1', text: 'Essa é a nota 1, somente para testes', date: new Date().toLocaleString()},
+    { id: '2', text: 'Essa é a nota 2, somente para testes', date: new Date().toLocaleString()},
   ]);
   
   const addNote = (newNote) => {

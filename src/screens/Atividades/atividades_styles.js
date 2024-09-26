@@ -14,12 +14,11 @@ const styles = StyleSheet.create({
       },  
       ati_data: {
         fontSize: 12,
-        color: '#888',
-        paddingVertical: 2
+        color: '#555',
       },
       ati_descricao: {
-        fontSize: 18,
-        color: '#333',
+        fontSize: 16,
+        color: '#333'
       },
     });
 

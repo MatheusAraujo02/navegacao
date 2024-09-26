@@ -13,8 +13,7 @@ const styles = StyleSheet.create({
   },
   noteDate: {
     fontSize: 12,
-    color: '#888',
-    paddingVertical: 2
+    color: '#555',
   },
   noteText: {
     fontSize: 18,
