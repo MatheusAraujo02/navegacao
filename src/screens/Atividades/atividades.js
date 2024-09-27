@@ -15,8 +15,8 @@ export default function Atividades() {
 
     useEffect(() => {
         const atividadeMock = [
-            { ati_id: 1, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 1',},
-            { ati_id: 2 , ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 2',},
+            { ati_id: 1, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 1', },
+            { ati_id: 2 , ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 2', },
         ];
         
         setAtividades(atividadeMock);
