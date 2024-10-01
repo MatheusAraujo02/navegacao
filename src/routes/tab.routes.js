@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { Feather, Ionicons} from '@expo/vector-icons';
+import { Feather, Ionicons } from '@expo/vector-icons';
 
 import Home from '../screens/Home/Home';
 import Diario from '../screens/Diario/Diario';
