@@ -6,6 +6,7 @@ import { useAtividades } from './atividades_context';
 // import { atividades } from '../../components/mocks/dados';
 import styles from './atividades_styles';
 import Detalhes from './detalhesAtv';
+import api from '../../services/api';
 
 const Stack = createStackNavigator();
 
@@ -14,13 +15,23 @@ export default function Atividades() {
     const { inicializarAtividades } = useAtividades();
 
     useEffect(() => {
-        const atividadeMock = [
-            { ati_id: 1, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 1', },
-            { ati_id: 2 , ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 2', },
-        ];
+      async function AtividadeMock(){
+        try {
+          const response = await api.get("/atividade/");
+          setAtividades(response.data.dados);
+          console.log(response.data.dados);
+        } catch (error) {
+          console.error("erro ao buscar atividade:", error)
+        }
+      }
+    // useEffect(() => {
+    //     const atividadeMock = [
+    //         { ati_id: 1, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 1', },
+    //         { ati_id: 2 , ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 2', },
+    //     ];
         
-        setAtividades(atividadeMock);
-        inicializarAtividades(atividadeMock);
+    //     setAtividades(atividadeMock);
+        inicializarAtividades(AtividadeMock);
     }, []);
 
     const ListarAtividades =({ navigation }) => {
