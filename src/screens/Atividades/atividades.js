@@ -17,25 +17,22 @@ export default function Atividades() {
     useEffect(() => {
       async function AtividadeMock(){
         try {
-          const response = await api.get("/atividade/");
+          const response = await api.get("/atividade");
+          // const atividadesData = response.data.dados;
+
+
           setAtividades(response.data.dados);
-          console.log(response.data.dados);
+          inicializarAtividades(response.data.dados);
         } catch (error) {
-          console.error("erro ao buscar atividade:", error)
+          console.error("erro ao buscar atividade:", error);
+          setAtividades([]);
         }
       }
-    // useEffect(() => {
-    //     const atividadeMock = [
-    //         { ati_id: 1, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 1', },
-    //         { ati_id: 2 , ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 2', },
-    //     ];
-        
-    //     setAtividades(atividadeMock);
-        inicializarAtividades(AtividadeMock);
+        AtividadeMock();
     }, []);
-
+    
     const ListarAtividades =({ navigation }) => {
-        return(
+      return(
         <View style={styles.container}>
           <FlatList 
             data={atividades}
@@ -44,23 +41,31 @@ export default function Atividades() {
               <Pressable
                 style={styles.atvItem}
                 onPress={() => navigation.navigate( 'Detalhes', {atividade: item})}
-              >
-                <Text style={styles.ati_data}>{item.ati_data}</Text>
-                <Text style={styles.ati_descricao}>{item.ati_descricao.slice(0,49)}...</Text>
+                >
+                <Text style={styles.ati_data}>{new Date(item.ati_data).toLocaleDateString('pt-BR')}</Text>
+                <Text style={styles.ati_descricao}>{item.ati_descricao.slice(0,20)}...</Text>
               </Pressable>
             )}
             />
         </View>
         )
-    };
-    return (
-      <Stack.Navigator>
+      };
+      return (
+        <Stack.Navigator>
         <Stack.Screen name='ListarAtividades' component={ListarAtividades} options={{title: 'Atividades', headerTitleAlign: 'center'}} />       
        <Stack.Screen name='Detalhes' component={Detalhes} options={{title: 'Detalhes da Atividade', headerTitleAlign: 'center'}}/>       
       </Stack.Navigator>
     )
+    
+  }
+  // useEffect(() => {
+  //     const atividadeMock = [
+  //         { ati_id: 1, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 1', },
+  //         { ati_id: 2 , ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 2', },
+  //     ];
+      
+  //     setAtividades(atividadeMock);
 
-}
 // import { useNavigation } from '@react-navigation/native';
 // 
 //     const navigation = useNavigation();
