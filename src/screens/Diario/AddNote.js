@@ -1,15 +1,11 @@
 import { useState} from 'react'
 import { View, TextInput, StyleSheet, Pressable, Text } from 'react-native';
 
-const AddNote = ({ navigation, route }) => {
-  const { addNote } = route.params;
+const AddNote = ({ navigation }) => {
   const [newNote, setNewNote] = useState('');
 
   const handleSave = () => {
-    if (newNote) {
-      addNote(newNote);
       navigation.goBack(); // Voltar para a lista de notas
-    }
   };
 
   return (

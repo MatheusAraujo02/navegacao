@@ -13,11 +13,11 @@ const styles = StyleSheet.create({
         
       },  
       ati_data: {
-        fontSize: 12,
+        fontSize: 14,
         color: '#555',
       },
       ati_descricao: {
-        fontSize: 16,
+        fontSize: 17,
         color: '#333'
       },
     });
