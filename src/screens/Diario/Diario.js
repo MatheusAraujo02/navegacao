@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { View, Text, Pressable, FlatList } from 'react-native'
-import { LogBox } from 'react-native';
+// import { LogBox } from 'react-native';
 import api from '../../services/api'
 
-LogBox.ignoreLogs([ // Usado para tirar o alerta da tela, depois preciso ver se o alerta é verdadeiro ou não ira afetar em nada
-  'Non-serializable values were found in the navigation state',
-]);
+// LogBox.ignoreLogs([ // Usado para tirar o alerta da tela, depois preciso ver se o alerta é verdadeiro ou não ira afetar em nada
+//   'Non-serializable values were found in the navigation state',
+// ]);
 
 import NoteDetails from './NoteDetails';
 import AddNote from './AddNote';
@@ -59,7 +59,7 @@ const ListaDeNotas = ({ navigation }) => {
             style={styles.noteItem}
             onPress={() => navigation.navigate('NoteDetails', { note: item })}
           >
-            <Text style={styles.noteDate}>{new Date(item.dia_data).toLocaleString('pt-BR')}</Text>
+            <Text style={styles.noteDate}>{new Date(item.dia_data).toLocaleDateString('pt-BR')}</Text>
             <Text style={styles.noteText}>{item.dia_relato.slice(0, 30)}...</Text>
           </Pressable>
         )}

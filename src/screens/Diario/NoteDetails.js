@@ -5,8 +5,8 @@ const NoteDetails = ({ route }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.dateText}>{note.date}</Text>
-      <Text style={styles.noteText}>{note.text}</Text>
+      <Text style={styles.dateText}>{new Date(note.dia_data).toLocaleDateString('pt-BR')}</Text>
+      <Text style={styles.noteText}>{note.dia_relato}</Text>
     </View>
   );
 };

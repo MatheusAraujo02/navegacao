@@ -11,7 +11,19 @@ import api from '../../services/api';
 const Stack = createStackNavigator();
 
 export default function Atividades() {
-    const [atividades, setAtividades] = useState([]);
+ 
+  return (
+    <Stack.Navigator>
+    <Stack.Screen name='ListarAtividades' component={ListarAtividades} options={{title: 'Atividades', headerTitleAlign: 'center'}} />       
+   <Stack.Screen name='Detalhes' component={Detalhes} options={{title: 'Detalhes da Atividade', headerTitleAlign: 'center'}}/>       
+  </Stack.Navigator>
+)
+
+}
+    
+    const ListarAtividades =({ navigation }) => {
+
+      const [atividades, setAtividades] = useState([]);
     const { inicializarAtividades } = useAtividades();
 
     useEffect(() => {
@@ -31,7 +43,6 @@ export default function Atividades() {
         AtividadeMock();
     }, []);
     
-    const ListarAtividades =({ navigation }) => {
       return(
         <View style={styles.container}>
           <FlatList 
@@ -50,14 +61,7 @@ export default function Atividades() {
         </View>
         )
       };
-      return (
-        <Stack.Navigator>
-        <Stack.Screen name='ListarAtividades' component={ListarAtividades} options={{title: 'Atividades', headerTitleAlign: 'center'}} />       
-       <Stack.Screen name='Detalhes' component={Detalhes} options={{title: 'Detalhes da Atividade', headerTitleAlign: 'center'}}/>       
-      </Stack.Navigator>
-    )
-    
-  }
+      
   // useEffect(() => {
   //     const atividadeMock = [
   //         { ati_id: 1, ati_data: new Date().toLocaleString(), ati_descricao: 'Teste, esta é a atividade 1', },

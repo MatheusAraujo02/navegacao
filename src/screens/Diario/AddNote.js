@@ -1,12 +1,20 @@
-import { useState} from 'react'
+import { useEffect, useState} from 'react'
 import { View, TextInput, StyleSheet, Pressable, Text } from 'react-native';
 
 const AddNote = ({ navigation }) => {
   const [newNote, setNewNote] = useState('');
 
-  const handleSave = () => {
-      navigation.goBack(); // Voltar para a lista de notas
-  };
+    async function AdicionarNota() {
+      try {
+        const response = await api.post("/diario");        
+        response.data.dados(newNote);        
+        navigation.goBack();
+      } catch (error) {
+        console.error('erro ao cadastrar nova nota', error)
+      }
+    }
+    AdicionarNota();
+ 
 
   return (
     <View style={styles.container}>
@@ -26,7 +34,7 @@ const AddNote = ({ navigation }) => {
           alignItems: 'center',
         }
         ]}
-        onPress={handleSave}
+        onPress={AdicionarNota}
       >  
         {({ pressed}) => (
           <Text style={{color: pressed ? '#000' : '#fff', fontSize: 18, }}> Salvar nota </Text>
@@ -53,3 +61,7 @@ const styles = StyleSheet.create({
 });
 
 export default AddNote;
+
+  // const handleSave = () => {
+  //     navigation.goBack(); // Voltar para a lista de notas
+  // };
