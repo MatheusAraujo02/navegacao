@@ -1,9 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function Emocao() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Emoção</Text>
+      <Image source={require('../../../assets/RAIVA.png')} style={{height: '15%' }}></Image>
+      <Image source={require('../../../assets/RAIVA.png')} style={{height: '15%' }}></Image>
+      <Image source={require('../../../assets/RAIVA.png')} style={{height: '15%' }}></Image>
+      <Image source={require('../../../assets/RAIVA.png')} style={{height: '15%' }}></Image>
+      {/* <Text style={styles.title}>Emoção</Text> */}
     </View>
   );
 }
