@@ -40,7 +40,7 @@ const ListaDeNotas = ({ navigation }) => {
   useEffect(() => {
     async function Notas() {
       try {
-        const response = await api.get("/diario/5");
+        const response = await api.get("/diario/11");
 
         setNotes(response.data.dados);
       } catch (error) {

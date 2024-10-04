@@ -1,19 +1,32 @@
 import { useEffect, useState} from 'react'
-import { View, TextInput, StyleSheet, Pressable, Text } from 'react-native';
+import { View, TextInput, StyleSheet, Pressable, Text, Alert } from 'react-native';
+
+import api from '../../services/api';
 
 const AddNote = ({ navigation }) => {
   const [newNote, setNewNote] = useState('');
 
-    async function AdicionarNota() {
-      try {
-        const response = await api.post("/diario");        
-        response.data.dados(newNote);        
-        navigation.goBack();
-      } catch (error) {
-        console.error('erro ao cadastrar nova nota', error)
-      }
+  const handleSalvarNota = async () => {
+    if (!newNote.trim()) {
+      Alert.alert('Erro', 'A nota não pode estar vazia!');
+      return;
     }
-    AdicionarNota();
+
+    try {
+      await api.post('/diario', {
+        pac_id: 11,
+        dia_relato: newNote,
+        dia_data: new Date(),
+      });
+
+      setNewNote('');
+      navigation.goBack();
+    } catch (error) {
+      console.error('Erro ao salvar nota', error);
+      Alert.alert('Erro', 'Houve um erro ao salvar a nota. Tente novamente');
+    }
+  }
+      
  
 
   return (
@@ -21,7 +34,6 @@ const AddNote = ({ navigation }) => {
       <TextInput
         style={styles.textInput}
         multiline
-        numberOfLines={10}
         placeholder="Escreva sua nova nota aqui..."
         value={newNote}
         onChangeText={setNewNote}
@@ -34,7 +46,7 @@ const AddNote = ({ navigation }) => {
           alignItems: 'center',
         }
         ]}
-        onPress={AdicionarNota}
+        onPress={handleSalvarNota}
       >  
         {({ pressed}) => (
           <Text style={{color: pressed ? '#000' : '#fff', fontSize: 18, }}> Salvar nota </Text>
