@@ -30,8 +30,6 @@ export default function Atividades() {
       async function AtividadeMock(){
         try {
           const response = await api.get("/atividade");
-          // const atividadesData = response.data.dados;
-
 
           setAtividades(response.data.dados);
           inicializarAtividades(response.data.dados);
