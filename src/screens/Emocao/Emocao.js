@@ -12,20 +12,20 @@ export default function Emocao() {
   
   const mostrarEmocaoSelecionada = () => {
     switch (idSelecionado) {
-      case 1:
-        return 'Feliz';
-      case 2:
-        return 'Neutro';
-      case 4:
-        return 'Triste';
-      case 5:
+      case 14:
         return 'Muito Feliz';
-      case 6:
+      case 15:
+        return 'Feliz';
+      case 16:
+        return 'Neutro';
+      case 17:
+        return 'Triste';
+      case 18:
         return 'Muito Triste';
-      case 7:
+      case 19:
         return 'Raiva';
       default:
-        return '';
+        return 'Emoção não selecionada';
     }
   };
 
@@ -48,27 +48,27 @@ export default function Emocao() {
   }
   return (
     <View style={styles.container}>
-      <Pressable onPress={() => setIdSelecionado(5)} >
+      <Pressable onPress={() => setIdSelecionado(14)} >
       <Image source={require('../../../assets/RAIVA.png')} style={styles.image} ></Image>
       </Pressable>
       
-      <Pressable onPress={() => setIdSelecionado(1)}>
+      <Pressable onPress={() => setIdSelecionado(15)}>
       <Image source={require('../../../assets/RAIVA.png')} style={styles.image} ></Image>
       </Pressable>
             
-      <Pressable onPress={() => setIdSelecionado(2)}>      
+      <Pressable onPress={() => setIdSelecionado(16)}>      
       <Image source={require('../../../assets/RAIVA.png')}style={styles.image} ></Image>
       </Pressable>
      
-      <Pressable onPress={() => setIdSelecionado(4)}>
+      <Pressable onPress={() => setIdSelecionado(17)}>
       <Image source={require('../../../assets/RAIVA.png')}style={styles.image} ></Image>
       </Pressable>
       
-      <Pressable onPress={() => setIdSelecionado(6)}>
+      <Pressable onPress={() => setIdSelecionado(18)}>
       <Image source={require('../../../assets/RAIVA.png')}style={styles.image}></Image>
       </Pressable>
      
-      <Pressable onPress={() => setIdSelecionado(7)}>
+      <Pressable onPress={() => setIdSelecionado(19)}>
       <Image source={require('../../../assets/RAIVA.png')} style={styles.image}></Image>
       </Pressable>
       
