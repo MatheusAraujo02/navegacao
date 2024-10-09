@@ -49,27 +49,27 @@ export default function Emocao() {
   return (
     <View style={styles.container}>
       <Pressable onPress={() => setIdSelecionado(14)} >
-      <Image source={require('../../../assets/RAIVA.png')} style={styles.image} ></Image>
+      <Image source={require('../../../assets/MuitoFeliz.png')} style={styles.image} ></Image>
       </Pressable>
       
       <Pressable onPress={() => setIdSelecionado(15)}>
-      <Image source={require('../../../assets/RAIVA.png')} style={styles.image} ></Image>
+      <Image source={require('../../../assets/Feliz.png')} style={styles.image} ></Image>
       </Pressable>
             
       <Pressable onPress={() => setIdSelecionado(16)}>      
-      <Image source={require('../../../assets/RAIVA.png')}style={styles.image} ></Image>
+      <Image source={require('../../../assets/Neutro.png')}style={styles.image} ></Image>
       </Pressable>
      
       <Pressable onPress={() => setIdSelecionado(17)}>
-      <Image source={require('../../../assets/RAIVA.png')}style={styles.image} ></Image>
+      <Image source={require('../../../assets/Triste.png')}style={styles.image} ></Image>
       </Pressable>
       
       <Pressable onPress={() => setIdSelecionado(18)}>
-      <Image source={require('../../../assets/RAIVA.png')}style={styles.image}></Image>
+      <Image source={require('../../../assets/MuitoTriste.png')}style={styles.image}></Image>
       </Pressable>
      
       <Pressable onPress={() => setIdSelecionado(19)}>
-      <Image source={require('../../../assets/RAIVA.png')} style={styles.image}></Image>
+      <Image source={require('../../../assets/Raiva.png')} style={styles.image}></Image>
       </Pressable>
       
 
@@ -96,10 +96,10 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
     image: {
-      width: Dimensions.get('window').width / 1.5,
-      height: Dimensions.get('window').width / 1.5, 
+      width: Dimensions.get('window').width / 8,
+      height: Dimensions.get('window').width / 8, 
       marginBottom: '-50%',
-      marginTop:'-35%'
+      marginTop:'-15%'
   },
   title: {
     fontSize: 22,
