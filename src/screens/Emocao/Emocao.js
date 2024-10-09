@@ -34,14 +34,14 @@ export default function Emocao() {
     if (idSelecionado !== null) {
       try {
         await api.post('/emocao_paciente', {
-          pac_id: 11,
           emo_id: idSelecionado,
-          emo_data: new Date(),
+          emo_data: new Date().toISOString().split("T")[0],
+          pac_id: 11,
         });
         setIdSelecionado(null);
         Alert.alert('Sucesso', 'Emoção salva com sucesso!');
       } catch (error) {
-        console.error('Erro ao salvar emoção', error);
+        console.error('Erro ao salvar emoção');
         Alert.alert('Erro', 'Houve um erro ao salvar a emoção. Tente novamente')
       }
     }
@@ -93,13 +93,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    // justifyContent: 'space-between',
   },
     image: {
-      width: Dimensions.get('window').width / 8,
-      height: Dimensions.get('window').width / 8, 
-      marginBottom: '-50%',
-      marginTop:'-15%'
+      width: Dimensions.get('window').width / 7,
+      height: Dimensions.get('window').width / 7, 
+      // marginBottom: '-50%',
+      // marginTop:'-15%'
   },
   title: {
     fontSize: 22,
@@ -107,7 +107,6 @@ const styles = StyleSheet.create({
   },
   selectedEmotionText: {
     fontSize: 20,
-    fontWeight: '600',
-    marginTop: 20,
+    fontWeight: 'bold',
   },
 });

@@ -1,13 +1,15 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { ScrollView, View, Text, StyleSheet } from 'react-native';
 
 const NoteDetails = ({ route }) => {
   const { note } = route.params;
 
   return (
+    <ScrollView style={{  flexGrow: 1}}>
     <View style={styles.container}>
       <Text style={styles.dateText}>{new Date(note.dia_data).toLocaleDateString('pt-BR')}</Text>
       <Text style={styles.noteText}>{note.dia_relato}</Text>
     </View>
+    </ScrollView>
   );
 };
 
