@@ -19,11 +19,6 @@ const Stack = createStackNavigator();
 
 export default function Diario() {
 
-  // const addNote = (newNote) => {
-  //   setNotes([...notes, { id: Date.now().toString(), text: newNote, date: new Date().toLocaleString() }]);
-  // };
-
-
   return (
     <Stack.Navigator>
       <Stack.Screen name='ListaDeNotas' component={ListaDeNotas} options={{ title: 'Diário Emocional', headerTitleAlign: 'center' }} />
@@ -81,7 +76,3 @@ const ListaDeNotas = ({ navigation }) => {
     </View>
   );
 };
-// const [notes, setNotes] = useState([
-//   { id: '1', text: 'Essa é a nota 1, somente para testes', date: new Date().toLocaleString()},
-//   { id: '2', text: 'Essa é a nota 2, somente para testes', date: new Date().toLocaleString()},
-// ]);

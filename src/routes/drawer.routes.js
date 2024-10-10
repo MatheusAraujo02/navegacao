@@ -1,3 +1,5 @@
+import { View, StyleSheet, Image  } from "react-native";
+
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { Feather } from '@expo/vector-icons';
 
@@ -6,12 +8,26 @@ import Config from "../screens/config/config";
 
 const Drawer = createDrawerNavigator();
 
+function CustomHeader() {
+  return (
+      <View style={styles.headerContainer}>
+          <Image 
+              source={require('../../assets/LogoGarden.png')} // Substitua pelo URL da sua imagem
+              style={styles.logo}
+              resizeMode="contain" // Ajusta a imagem para se manter dentro do espaço
+          />
+      </View>
+  );
+}
+
 export default function DrawerRoutes() {
     return (
         <Drawer.Navigator screenOptions={{
             drawerActiveTintColor: 'darkgreen', 
             drawerInactiveTintColor: 'grey',
-            title: '',
+            headerTitle: () => <CustomHeader />,
+            // headerTitleAlign: "center",
+
         }
         }>
             <Drawer.Screen
@@ -44,3 +60,17 @@ export default function DrawerRoutes() {
         </Drawer.Navigator>
     )
 }
+
+const styles = StyleSheet.create({
+  headerContainer: {
+      alignItems: 'center', // Centraliza a imagem
+      justifyContent: 'center',
+      height: 60, // Ajuste a altura conforme necessário
+  },
+  logo: {
+      // width: 150, // Ajuste a largura conforme necessário
+      // height: 40, // Ajuste a altura conforme necessário
+      width: 150,
+      height: 50
+  },
+});

@@ -3,10 +3,7 @@ import { StyleSheet, Text, View, Image, Pressable, Dimensions, Alert } from 'rea
 
 import api from '../../services/api';
 
-
 export default function Emocao() {
-
-
 
   const [idSelecionado, setIdSelecionado] = useState(null);
   
@@ -29,7 +26,6 @@ export default function Emocao() {
     }
   };
 
-
   const handleSalvarEmocao = async () => {
     if (idSelecionado !== null) {
       try {
@@ -48,6 +44,9 @@ export default function Emocao() {
   }
   return (
     <View style={styles.container}>
+
+      <Text style={styles.text}>Como está se sentindo?</Text> 
+
       <Pressable onPress={() => setIdSelecionado(14)} >
       <Image source={require('../../../assets/MuitoFeliz.png')} style={styles.image} ></Image>
       </Pressable>
@@ -71,18 +70,27 @@ export default function Emocao() {
       <Pressable onPress={() => setIdSelecionado(19)}>
       <Image source={require('../../../assets/Raiva.png')} style={styles.image}></Image>
       </Pressable>
-      
-
-  
-
+    
       {idSelecionado !== null && (
         <Text style={styles.selectedEmotionText}>
           Emoção Selecionada: {mostrarEmocaoSelecionada()}
         </Text>
       )}
       
-      <Pressable onPress={handleSalvarEmocao}>
-      <Text style={styles.title}>Emoção</Text>
+      <Pressable 
+        onPress={handleSalvarEmocao}
+        style={({ pressed }) => [{
+          backgroundColor: pressed ? 'grey' : 'darkgreen',
+          padding: 10,
+          borderRadius: 5,
+          alignItems: 'center',
+          width: '90%'
+        }
+        ]}
+      >
+        {({ pressed }) => 
+        <Text style={{ fontSize: 18, color: pressed ? '#000' : '#fff'}}>Confirmar emoção</Text>}
+      
       </Pressable>
     </View>
   );
@@ -93,20 +101,31 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
-    // justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
+  },
+  text: {
+    fontWeight: 'bold',
+    fontSize: 22,
+    padding: 10,
   },
     image: {
-      width: Dimensions.get('window').width / 7,
-      height: Dimensions.get('window').width / 7, 
+      width: Dimensions.get('window').width / 5.2,
+      height: Dimensions.get('window').height / 12, 
       // marginBottom: '-50%',
       // marginTop:'-15%'
   },
   title: {
-    fontSize: 22,
-    fontWeight: 'bold',
+
   },
   selectedEmotionText: {
     fontSize: 20,
     fontWeight: 'bold',
   },
+  // pressable:{
+  //   backgroundColor: 'darkgreen',
+  //   padding: 10,
+  //   borderRadius: 5,
+  //   alignItems: 'center',
+  //   width: '90%'
+  // },
 });

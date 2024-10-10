@@ -1,5 +1,5 @@
 import { useState} from 'react'
-import { View, TextInput, StyleSheet, Pressable, Text, Alert, KeyboardAvoidingView, Platform, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { View, TextInput, StyleSheet, Pressable, Text, Alert, KeyboardAvoidingView, Platform } from 'react-native';
 
 import api from '../../services/api';
 
@@ -32,7 +32,7 @@ const AddNote = ({ navigation }) => {
   return (
   <KeyboardAvoidingView 
     style={{ flex: 1}}
-    behavior={Platform.OS === 'ios' ? 'height' : 'height'} 
+    behavior={Platform.OS === 'ios' ? 'height' : ''} 
     keyboardVerticalOffset={Platform.OS === 'ios' ? 90 : 0}
   >  
     <View style={styles.container}>
@@ -75,6 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f9f9f9',
     borderRadius: 5,
     textAlignVertical: 'top',
+    marginBottom: 8
   },
 });
 
