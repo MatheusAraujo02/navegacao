@@ -1,31 +1,31 @@
-import React, { createContext, useState, useContext } from "react";
+// import React, { createContext, useState, useContext } from "react";
 
-const AtividadeContext = createContext();
+// const AtividadeContext = createContext();
 
-export const AtividadesProvider = ({ children }) => {
-    const [atividadesLidas, setAtividadesLidas] = useState({});
+// export const AtividadesProvider = ({ children }) => {
+//     const [atividadesLidas, setAtividadesLidas] = useState({});
 
-    const inicializarAtividades = ( atividades ) => {
-        const estadoInicial ={};
-        atividades.forEach(atividade => {
-            estadoInicial[atividade.ati_id] = false;
-        });
-        setAtividadesLidas(estadoInicial);            
-    };
+//     const inicializarAtividades = ( atividades ) => {
+//         const estadoInicial ={};
+//         atividades.forEach(atividade => {
+//             estadoInicial[atividade.ati_id] = false;
+//         });
+//         setAtividadesLidas(estadoInicial);            
+//     };
 
-    const toggleAtividadeLida = (id) => {
+//     const toggleAtividadeLida = (id) => {
 
-        setAtividadesLidas((prev) => ({
-            ...prev,
-            [id]: !prev[id],
-        }));
-    };
+//         setAtividadesLidas((prev) => ({
+//             ...prev,
+//             [id]: !prev[id],
+//         }));
+//     };
 
-    return(
-        <AtividadeContext.Provider value ={{ atividadesLidas, toggleAtividadeLida, inicializarAtividades}}> 
-            {children}
-        </AtividadeContext.Provider>
-    );
-};
+//     return(
+//         <AtividadeContext.Provider value ={{ atividadesLidas, toggleAtividadeLida, inicializarAtividades}}> 
+//             {children}
+//         </AtividadeContext.Provider>
+//     );
+// };
 
-export const useAtividades = () => useContext(AtividadeContext);
+// export const useAtividades = () => useContext(AtividadeContext);

@@ -26,7 +26,7 @@ export default function DrawerRoutes() {
             drawerActiveTintColor: 'darkgreen', 
             drawerInactiveTintColor: 'grey',
             headerTitle: () => <CustomHeader />,
-            // headerTitleAlign: "center",
+            headerTitleAlign: "center",
 
         }
         }>
@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
       // width: 150, // Ajuste a largura conforme necessário
       // height: 40, // Ajuste a altura conforme necessário
       width: 150,
-      height: 50
+      height: 50,
+      
   },
 });

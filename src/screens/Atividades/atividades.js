@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react';
 import { View, Text, FlatList, Pressable } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { useAtividades } from './atividades_context';
+// import { useAtividades } from './atividades_context';
 
 // import { atividades } from '../../components/mocks/dados';
 import styles from './atividades_styles';
@@ -24,7 +24,7 @@ export default function Atividades() {
     const ListarAtividades =({ navigation }) => {
 
       const [atividades, setAtividades] = useState([]);
-    const { inicializarAtividades } = useAtividades();
+    // const { inicializarAtividades } = useAtividades();
 
     useEffect(() => {
       async function AtividadeMock(){
