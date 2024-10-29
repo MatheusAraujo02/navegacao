@@ -37,7 +37,6 @@ export default function DrawerRoutes() {
                     drawerIcon: ({ focused, size,}) => <Feather name='home'  color={focused ? 'darkgreen' : 'grey' } size={ size }/>,
                     drawerLabel: 'Início',
             }}
-            
             />
                <Drawer.Screen
                 name='Config'

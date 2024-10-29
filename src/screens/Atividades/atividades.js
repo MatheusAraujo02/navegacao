@@ -15,7 +15,7 @@ export default function Atividades() {
   return (
     <Stack.Navigator>
     <Stack.Screen name='ListarAtividades' component={ListarAtividades} options={{title: 'Atividades', headerTitleAlign: 'center'}} />       
-   <Stack.Screen name='Detalhes' component={Detalhes} options={{title: 'Detalhes da Atividade', headerTitleAlign: 'center'}}/>       
+    <Stack.Screen name='Detalhes' component={Detalhes} options={{title: 'Detalhes da Atividade', headerTitleAlign: 'center'}}/>       
   </Stack.Navigator>
 )
 
@@ -32,7 +32,7 @@ export default function Atividades() {
           const response = await api.get("/atividade");
 
           setAtividades(response.data.dados);
-          inicializarAtividades(response.data.dados);
+          // inicializarAtividades(response.data.dados);
         } catch (error) {
           console.error("erro ao buscar atividade:", error);
           setAtividades([]);
