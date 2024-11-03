@@ -12,9 +12,9 @@ function CustomHeader() {
   return (
       <View style={styles.headerContainer}>
           <Image 
-              source={require('../../assets/LogoGarden.png')} // Substitua pelo URL da sua imagem
+              source={require('../../assets/LogoGarden.png')} 
               style={styles.logo}
-              resizeMode="contain" // Ajusta a imagem para se manter dentro do espaço
+              resizeMode="contain" 
           />
       </View>
   );

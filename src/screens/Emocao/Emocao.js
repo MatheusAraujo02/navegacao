@@ -7,7 +7,7 @@ export default function Emocao() {
 
   const [idSelecionado, setIdSelecionado] = useState(null);
   
-  const mostrarEmocaoSelecionada = () => {
+  const mostrarEmocaoSelecionada = () => {  // 
     switch (idSelecionado) {
       case 14:
         return 'Muito Feliz';

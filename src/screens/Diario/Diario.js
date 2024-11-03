@@ -10,7 +10,6 @@ import api from '../../services/api'
 
 import NoteDetails from './NoteDetails';
 import AddNote from './AddNote';
-
 import styles from './diario_styles';
 
 
@@ -28,14 +27,14 @@ export default function Diario() {
   )
 
 }
-
+// Fazendo a ligação com a API
 const ListaDeNotas = ({ navigation }) => {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
     async function Notas() {
       try {
-        const response = await api.get("/diario/11");
+        const response = await api.get("/diario/11"); // Usando um id especifico para testes, mudar quando o login estiver funcionando
 
         setNotes(response.data.dados);
       } catch (error) {
@@ -52,7 +51,7 @@ const ListaDeNotas = ({ navigation }) => {
         renderItem={({ item }) => (
           <Pressable
             style={styles.noteItem}
-            onPress={() => navigation.navigate('NoteDetails', { note: item })}
+            onPress={() => navigation.navigate('NoteDetails', { note: item })} // Faz a navegação para a tela de detalhes do diário
           >
             <Text style={styles.noteDate}>{new Date(item.dia_data).toLocaleDateString('pt-BR')}</Text>
             <Text style={styles.noteText}>{item.dia_relato.slice(0, 30)}...</Text>
@@ -67,7 +66,7 @@ const ListaDeNotas = ({ navigation }) => {
           alignItems: 'center',
         }
         ]}
-        onPress={() => navigation.navigate('AddNote')}
+        onPress={() => navigation.navigate('AddNote')} // Faz a navegação para a tela de adição de novos diários
       >
         {({ pressed }) => (
           <Text style={{ color: pressed ? '#000' : '#fff', fontSize: 18, }}> Adicionar nota </Text>
